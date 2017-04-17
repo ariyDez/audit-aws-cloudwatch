@@ -1,21 +1,3 @@
-coreo_aws_rule "cloudwatch-inventory" do
-  action :define
-  service :cloudwatch
-  link "http://kb.cloudcoreo.com/mydoc_all-inventory.html"
-  include_violations_in_count false
-  display_name "Cloudwatch Inventory"
-  description "This rule performs an inventory on all cloudwatch objects in the target AWS account."
-  category "Inventory"
-  suggested_action "None."
-  level "Informational"
-  objectives ["alarms"]
-  audit_objects ["object.metric_alarms.alarm_name"]
-  operators ["=~"]
-  raise_when [//]
-  id_map "object.metric_alarms.alarm_name"
-end
-
-
 coreo_uni_util_variables "cloudwatch-planwide" do
   action :set
   variables([

@@ -130,7 +130,6 @@ end
 coreo_uni_util_jsrunner "tags-rollup-cloudwatch" do
   action :run
   data_type "text"
-  json_input 'COMPOSITE::coreo_uni_util_jsrunner.tags-to-notifiers-array-cloudwatch.return'
   function <<-EOH
 const notifiers = json_input;
 

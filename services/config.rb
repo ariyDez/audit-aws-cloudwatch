@@ -22,7 +22,7 @@ coreo_uni_util_variables "cloudwatch-planwide" do
                 {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.composite_name' => 'PLAN::stack_name'},
                 {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.plan_name' => 'PLAN::name'},
                 {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.results' => 'unset'},
-                {'GLOBAL::number_violations' => '0'}
+                {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.number_violations' => '0'}
             ])
 end
 
@@ -38,7 +38,7 @@ coreo_uni_util_variables "cloudwatch-update-planwide-1" do
   action :set
   variables([
                 {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.results' => 'COMPOSITE::coreo_aws_rule_runner.advise-cloudwatch.report'},
-                {'GLOBAL::number_violations' => 'COMPOSITE::coreo_aws_rule_runner.advise-cloudwatch.number_violations'},
+                {'COMPOSITE::coreo_uni_util_variables.cloudwatch-planwide.number_violations' => 'COMPOSITE::coreo_aws_rule_runner.advise-cloudwatch.number_violations'},
 
             ])
 end
